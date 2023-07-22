@@ -1,0 +1,15 @@
+
+{
+    "data": "names.txt",
+    "tokenizer": "char",
+    "chain": {
+        "order": 2
+    },
+    "decoder": {
+        "k": 4,
+        "max_len": 9,
+        "len_penalization": 0.95,
+        "reps_penalization": 0.9,
+        "initial_eos": -0.4
+    }
+}
