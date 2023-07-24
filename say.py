@@ -20,7 +20,7 @@ from smn.tokenizers import *
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--prompt", type=str, default="")
-    parser.add_argument("--count", type=int, default=10)
+    parser.add_argument("--count", type=int, default=1)
     parser.add_argument("--config", type=str, default=None)
 
     return parser.parse_args()
@@ -34,7 +34,7 @@ def load_config(config_name: str) -> Dict[str, Any]:
 
 
 def read_train_set(name: str) -> List[str]:
-    with open(f"data/{name}", "r") as file:
+    with open(f"data/{name}", "r", encoding="utf-8") as file:
         lines = file.readlines()
         data = [line.strip() for line in lines]
 

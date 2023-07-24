@@ -35,9 +35,6 @@ class CharTokenizer(Tokenizer):
     _punct_to_delete = '!"#$%&()*+,./:;<=>?@[\]^_`{|}~'
     _punct_delete_regex = re.compile("[%s]" % re.escape(_punct_to_delete))
 
-    def __init__(self):
-        pass
-
     def fit(self, sequences: Iterable[str]):
         tokenized = [self._preprocess_string(st) for st in sequences]
         self._fit_dictionary(tokenized)
@@ -53,3 +50,11 @@ class CharTokenizer(Tokenizer):
         transformed = self.dictionary.transform(tokenized)
 
         return transformed
+    
+
+class BPETokenizer(CharTokenizer):
+    def __init__(vocab_size: int):
+        self.vocab_size = vocab_size
+
+    def fit(self, sequences: Iterable[str]):
+        pass

@@ -1,14 +1,14 @@
 {
-    "data": "pokemons.txt",
+    "data": "ru_cities.txt",
     "tokenizer": "char",
     "chain": {
         "order": 2
     },
     "decoder": {
         "k": 8,
-        "max_len": 12,
+        "max_len": 15,
         "len_penalization": 0.4,
-        "reps_penalization": 0.3,
+        "reps_penalization": 1.0,
         "initial_eos": -0.1,
         "reduce_k": true
     }
