@@ -1,0 +1,14 @@
+{
+    "data": "pokemons.txt",
+    "tokenizer": "char",
+    "chain": {
+        "order": 2
+    },
+    "decoder": {
+        "k": 2,
+        "max_len": 12,
+        "len_penalization": 0.5,
+        "reps_penalization": 0.3,
+        "initial_eos": -0.1
+    }
+}
